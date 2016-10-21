@@ -15,13 +15,13 @@ import cn.tech.zhangls.mddemo.R;
  * Created by zhangls on 2016/10/11.
  *
  */
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> implements View.OnClickListener {
+public class BlankAdapter extends RecyclerView.Adapter<BlankAdapter.MyViewHolder> implements View.OnClickListener {
     private Context mContext;
     private List<String> list;
     private OnItemClickListener mOnItemClickListener = null;
     private RecyclerView mRecyclerView = null;
 
-    public RecyclerAdapter(Context context, List<String> list) {
+    public BlankAdapter(Context context, List<String> list) {
         this.mContext = context;
         this.list = list;
     }

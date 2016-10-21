@@ -26,7 +26,7 @@ import java.util.List;
 
 import cn.tech.zhangls.mddemo.R;
 import cn.tech.zhangls.mddemo.home.adapter.DividerItemDecoration;
-import cn.tech.zhangls.mddemo.home.adapter.RecyclerAdapter;
+import cn.tech.zhangls.mddemo.home.adapter.BlankAdapter;
 import cn.tech.zhangls.mddemo.home.adapter.TitleItemDecoration;
 import cn.tech.zhangls.mddemo.home.adapter.bean.NameBean;
 import cn.tech.zhangls.mddemo.home.widget.IndexBar.IndexBarView;
@@ -36,8 +36,8 @@ public class BlankFragment extends Fragment implements LoaderManager.LoaderCallb
     List<String> mNameList;
     //中英文转换List
     private List<NameBean> nameBeanList;
-    //RecyclerAdapter
-    private RecyclerAdapter mRecycleAdapter;
+    //BlankAdapter
+    private BlankAdapter mRecycleAdapter;
     //字符串分割标志
     private final String SPLIT_FLAG = "@_@";
     //TitleItemDecoration
@@ -75,7 +75,7 @@ public class BlankFragment extends Fragment implements LoaderManager.LoaderCallb
 
         mNameList = new ArrayList<>();
         nameBeanList = new ArrayList<>();
-        mRecycleAdapter = new RecyclerAdapter(getContext(), mNameList);
+        mRecycleAdapter = new BlankAdapter(getContext(), mNameList);
         RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         mRecyclerView.setAdapter(mRecycleAdapter);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -98,7 +98,7 @@ public class BlankFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRecycleAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+        mRecycleAdapter.setOnItemClickListener(new BlankAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(RecyclerView recyclerView, View view, int position) {
                 Toast.makeText(getContext(), "---" + mNameList.get(position) + "---", Toast.LENGTH_SHORT).show();
